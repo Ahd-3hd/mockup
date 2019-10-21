@@ -11,6 +11,7 @@ import styled from "styled-components";
 import Select from "@material-ui/core/Select";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
+import MenuIcon from "@material-ui/icons/Menu";
 const Wrapper = styled.nav`
   display: flex;
   flex-grow: 1;
@@ -18,6 +19,9 @@ const Wrapper = styled.nav`
   height: 4rem;
   width: 100%;
   overflow: hidden;
+  #menu-button {
+    display: none;
+  }
   ul {
     display: flex;
     margin: 0;
@@ -69,6 +73,12 @@ const Wrapper = styled.nav`
   }
   @media (max-width: 855px) {
     #nav-links {
+      display: none;
+    }
+    #menu-button {
+      display: flex;
+    }
+    #language-button {
       display: none;
     }
   }
@@ -157,14 +167,24 @@ export default function Navbar() {
       </ul>
       <div
         style={{
-          display: "flex",
           alignSelf: "center",
           margin: "0.8rem",
           marginLeft: "auto"
         }}
+        id="language-button"
       >
         <LanguageIcon style={{ color: "#fff" }} />
         <ExpandMoreIcon style={{ color: "#fff" }} />
+      </div>
+      <div
+        style={{
+          alignSelf: "center",
+          margin: "0.8rem",
+          marginLeft: "auto"
+        }}
+        id="menu-button"
+      >
+        <MenuIcon style={{ color: "#fff" }} />
       </div>
     </Wrapper>
   );
